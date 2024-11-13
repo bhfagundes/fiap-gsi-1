@@ -1,0 +1,83 @@
+{
+    "version": 1,
+    "author": "Seu Nome",
+    "editor": "wokwi",
+    "parts": [
+      {
+        "type": "wokwi-esp32-devkit-v1",
+        "id": "esp",
+        "top": 0,
+        "left": 0,
+        "attrs": {}
+      },
+      {
+        "type": "wokwi-photoresistor-sensor",
+        "id": "ldr1",
+        "top": 50,
+        "left": 200,
+        "attrs": {}
+      },
+      {
+        "type": "wokwi-hc-sr04",
+        "id": "ultrasonic1",
+        "top": 150,
+        "left": 200,
+        "attrs": {}
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led_interno",
+        "top": 50,
+        "left": -100,
+        "attrs": {
+          "color": "white"
+        }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led_externo",
+        "top": 150,
+        "left": -100,
+        "attrs": {
+          "color": "yellow"
+        }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": 50,
+        "left": -50,
+        "attrs": {
+          "value": "220"
+        }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r2",
+        "top": 150,
+        "left": -50,
+        "attrs": {
+          "value": "220"
+        }
+      }
+    ],
+    "connections": [
+      [ "esp:GND.1", "led_interno:C", "black" ],
+      [ "esp:GND.1", "led_externo:C", "black" ],
+      [ "esp:GND.1", "ultrasonic1:GND", "black" ],
+      [ "esp:GND.1", "ldr1:GND", "black" ],
+      
+      [ "esp:3V3", "ldr1:VCC", "red" ],
+      [ "esp:VIN", "ultrasonic1:VCC", "red" ],
+      
+      [ "esp:D34", "ldr1:DO", "green" ],
+      [ "esp:D26", "ultrasonic1:TRIG", "yellow" ],
+      [ "esp:D27", "ultrasonic1:ECHO", "orange" ],
+      
+      [ "esp:D2", "r1:1", "blue" ],
+      [ "r1:2", "led_interno:A", "blue" ],
+      
+      [ "esp:D4", "r2:1", "purple" ],
+      [ "r2:2", "led_externo:A", "purple" ]
+    ]
+  }

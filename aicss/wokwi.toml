@@ -1,0 +1,38 @@
+[wokwi]
+version = 1
+elf = ".pio/build/esp32dev/firmware.elf"
+firmware = ".pio/build/esp32dev/firmware.bin"
+
+# Configurações de simulação
+[simulation]
+# Frequência do microcontrolador (em Hz)
+frequency = 160_000_000
+
+# Configurações dos pinos
+[[pin]]
+name = "LED_INTERNO"
+number = 2
+inverted = false
+
+[[pin]]
+name = "LED_EXTERNO"
+number = 4
+inverted = false
+
+# Configurações do monitor serial
+[serial]
+baudrate = 115200
+data_bits = 8
+parity = "none"
+stop_bits = 1
+
+# Configurações do WiFi (se necessário posteriormente)
+[wifi]
+ssid = "Wokwi-GUEST"
+password = ""
+
+# Configurações específicas do ESP32
+[esp32]
+# Configurações de memória
+psram = "disabled"
+flash_size = "4MB"

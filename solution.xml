@@ -1,0 +1,73 @@
+<mxfile host="app.diagrams.net" modified="2024-01-01T00:00:00.000Z" agent="Mozilla/5.0" version="21.6.6">
+  <diagram name="Arquitetura Completa GS" id="gs-architecture">
+    <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- Hardware Layer (AICSS) -->
+        <mxCell id="2" value="Camada de Hardware (AICSS)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="200" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="- ESP32&#xa;- Sensor LDR&#xa;- Sensor Ultrassom&#xa;- LEDs&#xa;- Conexão WiFi" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="2">
+          <mxGeometry x="10" y="30" width="150" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Data Collection Layer (CDS) -->
+        <mxCell id="4" value="Camada de Dados (CDS)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="280" y="40" width="200" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="- PostgreSQL&#xa;- Dados Históricos&#xa;- Métricas de Consumo&#xa;- Pipeline ETL&#xa;- APIs de Dados" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="4">
+          <mxGeometry x="10" y="30" width="150" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Analysis Layer (SCR) -->
+        <mxCell id="6" value="Camada de Análise (SCR)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="520" y="40" width="200" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="- R Scripts&#xa;- Análise Estatística&#xa;- Visualizações&#xa;- Previsões&#xa;- Insights" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="6">
+          <mxGeometry x="10" y="30" width="150" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- AI Layer (AIC) -->
+        <mxCell id="8" value="Camada de IA (AIC)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="760" y="40" width="200" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="- Modelos Preditivos&#xa;- Otimização&#xa;- Recomendações&#xa;- Machine Learning&#xa;- Automação" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="8">
+          <mxGeometry x="10" y="30" width="150" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Interface Layer (CTWP) -->
+        <mxCell id="10" value="Interface do Usuário (CTWP)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="40" y="240" width="920" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="- Interface Python&#xa;- Dashboard&#xa;- Relatórios&#xa;- Monitoramento Real-time&#xa;- Controles de Automação" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="10">
+          <mxGeometry x="10" y="30" width="150" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Integration Layer -->
+        <mxCell id="12" value="Camada de Integração" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="440" width="920" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="- APIs RESTful&#xa;- Message Queues&#xa;- WebSockets&#xa;- Data Pipeline&#xa;- Serviços de Integração" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="12">
+          <mxGeometry x="10" y="30" width="150" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Connections -->
+        <mxCell id="14" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="2" target="10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="4" target="10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="6" target="10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="8" target="10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
