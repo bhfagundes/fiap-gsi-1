@@ -1,0 +1,46 @@
+# Ambiente virtual Python
+venv/
+env/
+.env
+.venv/
+ENV/
+
+# Arquivos de cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Logs
+*.log
+logs/
+
+# Arquivos de dados
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# IDEs e editores
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Arquivos de configuração local
+config.local.yaml
+settings.local.json
+
+# Arquivos temporários
+tmp/
+temp/
+
+# Arquivos de build
+dist/
+build/
+*.egg-info/
+
+# Arquivos de dependências
+pip-log.txt
+pip-delete-this-directory.txt 
