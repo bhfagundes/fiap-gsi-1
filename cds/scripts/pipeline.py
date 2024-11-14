@@ -37,34 +37,34 @@ class DataPipeline:
     def process_worker(self):
         print("Iniciando processamento dos dados...")
         active_workers = self.num_fetch_workers
+        consecutive_timeouts = 0
+        max_timeouts = 3  # Número máximo de timeouts consecutivos
         
         while active_workers > 0 or not self.data_queue.empty():
             try:
-                df = self.data_queue.get(timeout=10)
+                df = self.data_queue.get(timeout=30)  # Aumentado timeout para 30s
+                consecutive_timeouts = 0  # Reset contador de timeouts
+                
                 if df is not None and not df.empty:
                     print(f"Processando lote com {len(df)} registros...")
                     try:
                         df_transformed = self.etl.transform_consumption_data(df)
                         if df_transformed is not None and not df_transformed.empty:
-                            try:
-                                self.etl.load_to_db(df_transformed, 'aneel_dados')
-                                self.total_processed += len(df_transformed)
-                                print(f"Lote processado com sucesso. Total: {self.total_processed} registros")
-                            except Exception as e:
-                                print(f"Erro ao inserir no banco: {str(e)[:200]}")
+                            self.etl.load_to_db(df_transformed, 'aneel_dados')
+                            self.total_processed += len(df_transformed)
+                            print(f"Lote processado com sucesso. Total: {self.total_processed} registros")
                         else:
                             print("Transformação resultou em DataFrame vazio")
                     except Exception as e:
-                        print(f"Erro na transformação: {str(e)[:200]}")
-                else:
-                    print("DataFrame recebido está vazio")
+                        print(f"Erro no processamento do lote: {str(e)[:200]}")
                 
             except queue.Empty:
-                print("Timeout na fila de processamento")
-                active_workers -= 1
-            except Exception as e:
-                print(f"Erro geral no processamento: {str(e)[:200]}")
-                active_workers -= 1
+                consecutive_timeouts += 1
+                print(f"Timeout na fila ({consecutive_timeouts}/{max_timeouts})")
+                if consecutive_timeouts >= max_timeouts:
+                    print("Múltiplos timeouts consecutivos, reduzindo workers ativos")
+                    active_workers -= 1
+                    consecutive_timeouts = 0
             
     def run(self):
         print("Iniciando pipeline de dados...")
