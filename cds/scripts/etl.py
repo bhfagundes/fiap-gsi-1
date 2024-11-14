@@ -15,34 +15,9 @@ class EnergyETL:
                  f"{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
         
         self.engine = create_engine(db_url)
-        self.setup_regions()
         
-    def setup_regions(self):
-        create_regions_table = """
-        CREATE TABLE IF NOT EXISTS regions (
-            id SERIAL PRIMARY KEY,
-            name VARCHAR(100) NOT NULL UNIQUE,
-            state VARCHAR(2)
-        );
-        """
         
-        regions_data = [
-            ('Norte', None),
-            ('Nordeste', None),
-            ('Centro-Oeste', None),
-            ('Sudeste', None),
-            ('Sul', None)
-        ]
-        
-        with self.engine.begin() as conn:
-            conn.execute(text(create_regions_table))
-            
-            for region, state in regions_data:
-                conn.execute(
-                    text("INSERT INTO regions (name, state) VALUES (:name, :state) ON CONFLICT (name) DO NOTHING"),
-                    {"name": region, "state": state}
-                )
-            
+
     def transform_consumption_data(self, df):
         try:
             if df.empty:
@@ -235,13 +210,15 @@ class EnergyETL:
         WITH trends AS (
             SELECT 
                 regiao_id,
-                periodo,
+                MAKE_DATE(ano, mes, 1) as periodo,
                 consumo_per_capita,
-                LAG(consumo_per_capita) OVER (PARTITION BY regiao_id ORDER BY periodo) as consumo_anterior,
+                LAG(consumo_per_capita) OVER (
+                    PARTITION BY regiao_id ORDER BY ano, mes
+                ) as consumo_anterior,
                 100 * (consumo_per_capita - LAG(consumo_per_capita) OVER (
-                    PARTITION BY regiao_id ORDER BY periodo
+                    PARTITION BY regiao_id ORDER BY ano, mes
                 )) / LAG(consumo_per_capita) OVER (
-                    PARTITION BY regiao_id ORDER BY periodo
+                    PARTITION BY regiao_id ORDER BY ano, mes
                 ) as variacao
             FROM consumo_regional
         )

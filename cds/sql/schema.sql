@@ -1,7 +1,33 @@
 CREATE TABLE regions (
+    id INTEGER PRIMARY KEY,
+    nome VARCHAR(50),
+    populacao INTEGER,
+    area_km2 DECIMAL(10,2)
+);
+
+INSERT INTO regions (id, nome, populacao, area_km2) VALUES
+    (1, 'Norte', 18672591, 3853327.23),
+    (2, 'Nordeste', 57071654, 1554257.00),
+    (3, 'Centro-Oeste', 16707336, 1606371.50),
+    (4, 'Sudeste', 89012240, 924511.30),
+    (5, 'Sul', 30402587, 576409.60);
+
+CREATE TABLE consumo_regional (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL UNIQUE,
-    state VARCHAR(2)
+    regiao_id INTEGER REFERENCES regions(id),
+    ano INTEGER,
+    mes INTEGER,
+    demanda_mw DECIMAL(10,2),
+    consumo_per_capita DECIMAL(10,4)
+);
+
+CREATE TABLE analise_tendencias (
+    id SERIAL PRIMARY KEY,
+    periodo TIMESTAMP,
+    regiao_id INTEGER REFERENCES regions(id),
+    consumo_per_capita DECIMAL(10,4),
+    variacao_percentual DECIMAL(5,2),
+    tendencia_consumo VARCHAR(20)
 );
 
 CREATE TABLE aneel_dados (

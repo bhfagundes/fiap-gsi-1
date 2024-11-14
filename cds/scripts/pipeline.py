@@ -38,12 +38,12 @@ class DataPipeline:
         print("Iniciando processamento dos dados...")
         active_workers = self.num_fetch_workers
         consecutive_timeouts = 0
-        max_timeouts = 3  # Número máximo de timeouts consecutivos
+        max_timeouts = 3
         
         while active_workers > 0 or not self.data_queue.empty():
             try:
-                df = self.data_queue.get(timeout=30)  # Aumentado timeout para 30s
-                consecutive_timeouts = 0  # Reset contador de timeouts
+                df = self.data_queue.get(timeout=30)
+                consecutive_timeouts = 0
                 
                 if df is not None and not df.empty:
                     print(f"Processando lote com {len(df)} registros...")
@@ -59,6 +59,8 @@ class DataPipeline:
                         print(f"Erro no processamento do lote: {str(e)[:200]}")
                 
             except queue.Empty:
+                if self.all_workers_finished:
+                    break
                 consecutive_timeouts += 1
                 print(f"Timeout na fila ({consecutive_timeouts}/{max_timeouts})")
                 if consecutive_timeouts >= max_timeouts:
@@ -70,12 +72,11 @@ class DataPipeline:
         print("Iniciando pipeline de dados...")
         start_time = time.time()
         
-        # Obtém total de registros para dividir entre as threads
+        self.all_workers_finished = False
         total_records = self.crawler.get_total_records()
         records_per_worker = total_records // self.num_fetch_workers
         
         with ThreadPoolExecutor(max_workers=self.num_fetch_workers + 1) as executor:
-            # Inicia workers de coleta
             futures = []
             for i in range(self.num_fetch_workers):
                 offset_start = i * records_per_worker
@@ -84,12 +85,12 @@ class DataPipeline:
                     executor.submit(self.fetch_worker, i, offset_start, offset_end)
                 )
             
-            # Inicia worker de processamento
             process_future = executor.submit(self.process_worker)
             
-            # Aguarda conclusão
             for f in futures:
                 f.result()
+            
+            self.all_workers_finished = True
             process_future.result()
         
         elapsed_time = time.time() - start_time
