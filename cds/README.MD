@@ -39,32 +39,7 @@ Sistema de análise de consumo energético que integra dados da ANEEL com inform
 
 ## 🏗 Arquitetura
 
-                    +------------+     +-----------+     +------------+
-                    |  ANEEL API |     |AICSS Data|     |Sensor Data|
-                    +------------+     +-----------+     +------------+
-                           |                |                |
-                           v                v                v
-                                  +----------------+
-                                  |   ETL Layer    |
-                                  +----------------+
-                                          |
-                                          v
-                                  +----------------+
-                                  | PostgreSQL DB  |
-                                  +----------------+
-                                          |
-                                          v
-                                  +----------------+
-                                  |Analytics Layer |
-                                  +----------------+
-                                       |     |
-                                       v     v
-                            +----------+     +-----------+
-                            |Visualização    |Predições  |
-                            +----------+     +-----------+
-
-## Diagrama do Processo de ETL e Análise
-```mermaid
+ ```mermaid
 graph TD
     A(ANEEL API) --> ETL
     B(AICSS Data) --> ETL
@@ -75,8 +50,6 @@ graph TD
     E --> F(Visualização)
     E --> G(Predições)
 ```
-
-
 
 ## 📁 Estrutura do Projeto
 
@@ -91,6 +64,18 @@ cds/
 │   └── queries/
 ├── data/              # Dados brutos e processados
 └── README.md
+
+* **cds/**: Diretório raiz do projeto.
+    * **docker/**: Contém os arquivos de configuração e Dockerfiles para a criação dos containers.
+    * **scripts/**: Scripts Python utilizados para o processo de ETL (Extract, Transform, Load).
+        * **crawler.py:** Coleta dados da ANEEL.
+        * **etl.py:** Realiza o processamento dos dados.
+        * **pipeline.py:** Orquestra todo o processo de ETL.
+    * **sql/**: Contém os scripts SQL para criação das tabelas e execução das consultas.
+        * **schema.sql:** Define o esquema do banco de dados.
+        * **queries/**: Contém as consultas SQL utilizadas no processo.
+    * **data/**: Armazena os dados brutos e processados.
+    * **README.md:** Este arquivo.
 
 ## ⚙️ Configuração
 
