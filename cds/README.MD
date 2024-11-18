@@ -35,7 +35,7 @@
   - [🔗 Links Úteis](#-links-úteis)
 
 ## 👀 Visão Geral
-Sistema de análise de consumo energético que integra dados da ANEEL com informações do sistema AICSS para fornecer insights sobre padrões de consumo e eficiência energética.
+Sistema de análise de consumo energético que integra dados da ANEEL com informações do sistema AICSS que é um sistema automatizado de controle de iluminação residencial que otimiza o consumo de energia através de sensores e automação inteligente. O sistema gerencia tanto a iluminação interna quanto externa, considerando fatores como luminosidade ambiente e presença de pessoas.Essa integração tem como objetivo fornecer insights sobre padrões de consumo e eficiência energética.
 
 ## 🏗 Arquitetura
 
@@ -52,18 +52,6 @@ graph TD
 ```
 
 ## 📁 Estrutura do Projeto
-
-cds/
-├── docker/              # Containers e configurações
-├── scripts/            # Scripts Python para ETL
-│   ├── crawler.py     # Coleta dados ANEEL
-│   ├── etl.py        # Processamento
-│   └── pipeline.py   # Orquestração
-├── sql/               # Schemas e queries
-│   ├── schema.sql
-│   └── queries/
-├── data/              # Dados brutos e processados
-└── README.md
 
 * **cds/**: Diretório raiz do projeto.
     * **docker/**: Contém os arquivos de configuração e Dockerfiles para a criação dos containers.
@@ -140,6 +128,25 @@ python scripts/pipeline.py
 - PostgreSQL com particionamento
 - Índices otimizados
 - Backup automático
+
+```mermaid
+subgraph Coleta de Dados
+        A(API ANEEL) --> B{Coleta Diária}
+    end
+
+    subgraph Processamento
+        B --> C{Limpeza e Validação}
+        C --> D{Transformação}
+        D --> E{Enriquecimento com AICSS}
+    end
+
+    subgraph Armazenamento
+        E --> F{PostgreSQL}
+        F --> G{Particionamento}
+        F --> H{Indexação}
+        F --> I{Backup Automático}
+    end
+```
 
 ## 🔗 Integração
 
