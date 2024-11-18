@@ -130,21 +130,22 @@ python scripts/pipeline.py
 - Backup automático
 
 ```mermaid
-subgraph Coleta de Dados
-        A(API ANEEL) --> B{Coleta Diária}
+flowchart LR
+    subgraph Coleta de Dados
+        A((API ANEEL)) --> B((Coleta Diária))
     end
 
     subgraph Processamento
-        B --> C{Limpeza e Validação}
-        C --> D{Transformação}
-        D --> E{Enriquecimento com AICSS}
+        B --> C((Limpeza e Validação))
+        C --> D((Transformação))
+        D --> E((Enriquecimento com AICSS))
     end
 
     subgraph Armazenamento
-        E --> F{PostgreSQL}
-        F --> G{Particionamento}
-        F --> H{Indexação}
-        F --> I{Backup Automático}
+        E --> F((PostgreSQL))
+        F --> G((Particionamento))
+        F --> H((Indexação))
+        F --> I((Backup Automático))
     end
 ```
 
