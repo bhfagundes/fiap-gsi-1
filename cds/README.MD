@@ -172,12 +172,12 @@ flowchart LR
 
 ## 🔗 Integração
 
-### Com AICSS - Sistema automatizado de controle de iluminação residencial que otimiza o consumo de energia através de sensores e automação inteligente. O sistema gerencia tanto a iluminação interna quanto externa, considerando fatores como luminosidade ambiente e presença de pessoas.
+## Com AICSS - Sistema automatizado de controle de iluminação residencial que otimiza o consumo de energia através de sensores e automação inteligente. O sistema gerencia tanto a iluminação interna quanto externa, considerando fatores como luminosidade ambiente e presença de pessoas.
 - Dados de sensores (referência em `aicss/src/main.cpp`, linhas 5-10)
 - Métricas de consumo
 - Alertas em tempo real
 
-### Com SCR - Realiza análise completa de dados de geração de energia distribuída, utilizando dados da Agência Nacional de Energia Elétrica - ANEEL, o código automatiza o download, processamento e análise de dados, gerando resultados estatísticos, gráficos e relatórios completos, facilitando a compreensão da geração de energia distribuída no Brasil.
+## Com SCR - Realiza análise completa de dados de geração de energia distribuída, utilizando dados da Agência Nacional de Energia Elétrica - ANEEL, o código automatiza o download, processamento e análise de dados, gerando resultados estatísticos, gráficos e relatórios completos, facilitando a compreensão da geração de energia distribuída no Brasil.
 - Exportação para análise R (referência em `aicss/readme.md`, linhas 457-460)
 - Importação de predições
 - Métricas de desempenho
