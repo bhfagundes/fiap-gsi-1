@@ -64,6 +64,7 @@ Sistema de análise de consumo energético que integra dados da ANEEL com inform
                             +----------+     +-----------+
 
 ## Diagrama do Processo de ETL e Análise
+```mermaid
 graph TD
     A(ANEEL API) --> ETL
     B(AICSS Data) --> ETL
@@ -73,7 +74,7 @@ graph TD
     D --> E(Analytics Layer)
     E --> F(Visualização)
     E --> G(Predições)
-
+```
 
 
 
