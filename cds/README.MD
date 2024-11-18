@@ -64,14 +64,15 @@ Sistema de análise de consumo energético que integra dados da ANEEL com inform
                             +----------+     +-----------+
 
 ## Diagrama do Processo de ETL e Análise
-graph TD;
-    A[ANEEL API] --> ETL[ETL Layer];
-    B[AICSS Data] --> ETL;
-    C[Sensor Data] --> ETL;
-    ETL --> DB[PostgreSQL DB];
-    DB --> AL[Analytics Layer];
-    AL --> V[Visualização];
-    AL --> P[Predições];
+graph TD
+    A(ANEEL API) --> ETL
+    B(AICSS Data) --> ETL
+    C(Sensor Data) --> ETL
+  
+    ETL --> D{PostgreSQL DB}
+    D --> E(Analytics Layer)
+    E --> F(Visualização)
+    E --> G(Predições)
 
 
 
