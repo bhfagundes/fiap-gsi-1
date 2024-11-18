@@ -121,7 +121,7 @@ O processo começa com a extração de dados diretamente da API da ANEEL, que pe
 - Formato: JSON/CSV
 
 ### Processamento
-Na etapa de processamento os dados passaam etapas listadas abaixo para assegurar sua qualidade e utilidade:
+Na etapa de processamento os dados passam pelas etapas listadas abaixo, para assegurar a qualidade e utilidade:
 
 - Limpeza: São eliminados dados duplicados, inconsistentes ou inválidos, garantindo a integridade dos dados que serão armazenados.
 - Validação: Os dados são checados para confirmar que atendem aos padrões esperados. Por exemplo, as datas devem estar em um formato correto, e os valores numéricos devem estar dentro de um intervalo aceitável.
@@ -130,7 +130,7 @@ Na etapa de processamento os dados passaam etapas listadas abaixo para assegurar
 
 
 ### Armazenamento
-Os dados processados são armazenados em um banco de dados PostgreSQL. Escolhemos esse SGBD pois apresenta alta performance, escalabilidade e flexibilidade. Para otimizar o armazenamento e as consultas, são utilizadas as seguintes técnicas:
+Os dados processados são armazenados em um banco de dados PostgreSQL, escolhemos esse SGBD, pois apresenta alta performance, escalabilidade e flexibilidade. Para otimizar o armazenamento e as consultas, são utilizadas as seguintes técnicas:
 
 - Particionamento: As tabelas são divididas em partes menores (partições), melhorando o desempenho de consultas em grandes volumes de dados.
 - Índices: foram criados índices em colunas para acelerar a busca por registros específicos.
