@@ -100,6 +100,7 @@ source venv/bin/activate  # Linux/Mac
 ```
 .\venv\Scripts\activate   # Windows
 ```
+```
 pip install -r requirements.txt
 ```
 
@@ -113,11 +114,15 @@ pip install -r requirements.txt
 
 1. Inicie os containers:
 
+```
 docker-compose up -d
+```
 
 2. Execute o pipeline:
 
+```
 python scripts/pipeline.py
+```
 
 ## 📊 Pipeline de Dados
 
