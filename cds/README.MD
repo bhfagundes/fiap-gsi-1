@@ -94,15 +94,17 @@ cd cds
 ```
 2. Configure o ambiente:
 
-python -m venv venv
+```python -m venv venv
 source venv/bin/activate  # Linux/Mac
 .\venv\Scripts\activate   # Windows
 pip install -r requirements.txt
+```
 
 3. Configure as variáveis de ambiente:
 
-cp .env.example .env
+```cp .env.example .env
 # Edite .env com suas credenciais
+```
 
 ## 🚀 Execução
 
