@@ -1,41 +1,55 @@
-# 🔋 Sistema de Análise de Consumo Energético (CDS)
+# 🔋 Lumion Analytics - Sistema de Análise de Consumo Energético (CDS)
 
 ## 📝 Sumário
-- [🔋 Sistema de Análise de Consumo Energético (CDS)](#-sistema-de-análise-de-consumo-energético-cds)
-  - [📝 Sumário](#-sumário)
+
   - [👀 Visão Geral](#-visão-geral)
+
   - [🏗 Arquitetura](#-arquitetura)
+
   - [📁 Estrutura do Projeto](#-estrutura-do-projeto)
+
   - [⚙️ Configuração](#️-configuração)
     - [Pré-requisitos](#pré-requisitos)
     - [Instalação](#instalação)
-- [Edite .env com suas credenciais](#edite-env-com-suas-credenciais)
+
   - [🚀 Execução](#-execução)
+
   - [📊 Pipeline de Dados](#-pipeline-de-dados)
     - [Coleta (ANEEL)](#coleta-aneel)
     - [Processamento](#processamento)
     - [Armazenamento](#armazenamento)
+
   - [🔗 Integração](#-integração)
     - [Com AICSS](#com-aicss)
     - [Com SCR](#com-scr)
+
   - [📈 Métricas e KPIs](#-métricas-e-kpis)
+
   - [🔒 Segurança](#-segurança)
+
   - [📚 Documentação API](#-documentação-api)
+
   - [🔄 Manutenção](#-manutenção)
+
   - [📱 Interface Web](#-interface-web)
+
   - [🌐 Endpoints API](#-endpoints-api)
     - [Dados ANEEL](#dados-aneel)
     - [Análise](#análise)
     - [Integração AICSS](#integração-aicss)
+
   - [🤝 Contribuição](#-contribuição)
+
   - [📊 Visualização](#-visualização)
     - [Dashboards](#dashboards)
     - [Relatórios](#relatórios)
+
   - [📄 Licença](#-licença)
+
   - [🔗 Links Úteis](#-links-úteis)
 
 ## 👀 Visão Geral
-Sistema de análise de consumo energético que integra dados da ANEEL com informações do sistema AICSS que é um sistema automatizado de controle de iluminação residencial que otimiza o consumo de energia através de sensores e automação inteligente. O sistema gerencia tanto a iluminação interna quanto externa, considerando fatores como luminosidade ambiente e presença de pessoas. Essa integração tem como objetivo fornecer insights sobre padrões de consumo e eficiência energética.
+Lumion Analytics é um sistema de análise de consumo energético que integra dados da Agencia Nacional de Energia Elétrica - ANEEL com informações do sistema AICSS que é um sistema automatizado de controle de iluminação residencial que otimiza o consumo de energia através de sensores e automação inteligente. O sistema gerencia tanto a iluminação interna quanto externa, considerando fatores como luminosidade ambiente e presença de pessoas. Essa integração tem como objetivo fornecer insights sobre padrões de consumo e eficiência energética.
 
 ## 🏗 Arquitetura
 
@@ -115,7 +129,7 @@ python scripts/pipeline.py
 ## 📊 Pipeline de Dados
 
 ### Coleta (ANEEL)
-O processo começa com a extração de dados diretamente da API da ANEEL, que permite o acesso a informações oficiais de maneira automatizada. Essa extração ocorre diariamente para assegurar que o banco de dados esteja sempre atualizado. Os dados são recebidos no formato JSON.
+O processo começa com a extração de dados diretamente da API da ANEEL, que permite o acesso a informações oficiais de maneira automatizada. Essa extração ocorre diariamente para assegurar que o banco de dados esteja sempre atualizado. Os dados são recebidos no formato JSON/CSV.
 - API REST para dados oficiais
 - Periodicidade: Diária
 - Formato: JSON/CSV
@@ -158,27 +172,35 @@ flowchart LR
 
 ## 🔗 Integração
 
-### Com AICSS
+### Com AICSS - Sistema automatizado de controle de iluminação residencial que otimiza o consumo de energia através de sensores e automação inteligente. O sistema gerencia tanto a iluminação interna quanto externa, considerando fatores como luminosidade ambiente e presença de pessoas.
 - Dados de sensores (referência em `aicss/src/main.cpp`, linhas 5-10)
 - Métricas de consumo
 - Alertas em tempo real
 
-### Com SCR
+### Com SCR - Realiza análise completa de dados de geração de energia distribuída, utilizando dados da Agência Nacional de Energia Elétrica - ANEEL, o código automatiza o download, processamento e análise de dados, gerando resultados estatísticos, gráficos e relatórios completos, facilitando a compreensão da geração de energia distribuída no Brasil.
 - Exportação para análise R (referência em `aicss/readme.md`, linhas 457-460)
 - Importação de predições
 - Métricas de desempenho
 
 ## 📈 Métricas e KPIs
-- Tempo de processamento ETL
-- Latência de queries
-- Taxa de sucesso de coleta
-- Qualidade dos dados
+Métricas e KPIs são indicadores essenciais que nos ajudam a medir o desempenho e a eficácia de um sistema. No contexto de um sistema de análise de dados, como o Lumion Analytics, essas métricas são fundamentais para assegurar a qualidade dos resultados e otimizar os processos. A seguir, vamos detalhar cada uma das métricas mencionadas:
+
+- Tempo de processamento ETL (Extract, Transform, Load): Essa métrica é importante porque um tempo de processamento reduzido assegura que o data warehouse seja atualizado rapidamente, o que permite análises mais ágeis e decisões baseadas em dados mais recentes. Para melhorar essa métrica, é possível otimizar as consultas SQL, utilizar ferramentas de ETL mais eficientes, aplicar paralelismo e realizar indexação.
+
+- Latência de queries: O ideial é que essa métrica esteja sempre baixa, pois uma baixa latência permite que os usuários obtenham respostas rápidas às suas perguntas, o que facilita a tomada de decisões. Para melhorar essa métrica, é possível criar índices adequados, otimizar as consultas SQL, utilizar cache e investir em hardware mais potente.
+
+- Taxa de sucesso de coleta: Essa métrica deve estar sempre alta, porque uma alta taxa de sucesso assegura a integridade dos dados e a confiabilidade das análises. Para melhorar essa métrica, é necessário monitorar as fontes de dados, implementar mecanismos de repetição e alertas para falhas, além de utilizar ferramentas de monitoramento robustas.
+
+- Qualidade dos dados: Essa métrica mede a precisão, completude, consistência e relevância dos dados, ela é importante porque dados de alta qualidade são essenciais para gerar insights confiáveis e tomar decisões assertivas. Para melhorar essa métrica, é fundamental implementar processos de limpeza e validação de dados, realizar análises exploratórias de dados e utilizar ferramentas de profiling de dados.
 
 ## 🔒 Segurança
-- Autenticação JWT
-- SSL/TLS
-- Backup automático
-- Logs de auditoria
+- Autenticação JWT: A assinatura digital assegura a integridade do token e previne qualquer manipulação. O servidor não precisa manter informações de sessão, o que torna o sistema mais escalável e seguro. E pode ser utilizado em uma variedade de aplicações e plataformas.
+
+- SSL/TLS (Secure Sockets Layer/Transport Layer Security): Benefícios confidencialidade, integridade e autenticidade
+
+- Backup Automático: Benefícios recuperação de dados, conformidade e tranquilidade
+
+- Logs de auditoria: Benefícios investigação de incidentes, análise de comportamento e conformidade
 
 ## 📚 Documentação API
 Disponível em: `/docs/api.md`
@@ -220,15 +242,6 @@ GET /api/v1/aicss/status
 PUT /api/v1/aicss/config
 ```
 
-## 🤝 Contribuição
-1. Fork o projeto
-2. Crie sua branch (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
-
-
 ## 📊 Visualização
 
 ### Dashboards
@@ -243,10 +256,17 @@ PUT /api/v1/aicss/config
 - Mensais
 - Personalizados
 
-## 📄 Licença
-Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
-
 ## 🔗 Links Úteis
 - [Documentação API](/docs/api.md)
 - [Guia de Contribuição](/CONTRIBUTING.md)
 - [Changelog](/CHANGELOG.md)
+
+## 🤝 Contribuição
+1. Fork o projeto
+2. Crie sua branch (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📄 Licença
+Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
