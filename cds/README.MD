@@ -96,8 +96,10 @@ cd cds
 
 ```python -m venv venv
 source venv/bin/activate  # Linux/Mac
-.\venv\Scripts\activate   # Windows
-pip install -r requirements.txt
+```
+```.\venv\Scripts\activate   # Windows
+```
+```pip install -r requirements.txt
 ```
 
 3. Configure as variáveis de ambiente:
