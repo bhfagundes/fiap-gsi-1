@@ -63,11 +63,8 @@ Sistema de análise de consumo energético que integra dados da ANEEL com inform
                             |Visualização    |Predições  |
                             +----------+     +-----------+
 
-## Diagrama do Processo de ETL e Análise
-
-```mermaid
 flowchart LR
-    subgraph Fontes de Dados fill:#f9f,stroke:#333
+    subgraph Fontes de Dados style fill:#f9f,stroke:#333
         A((ANEEL API)) --> ETL((ETL Layer))
         B(AICSS Data) --> ETL
         C(Sensor Data) --> ETL
