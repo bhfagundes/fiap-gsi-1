@@ -38,15 +38,15 @@
     - [Análise](#análise)
     - [Integração AICSS](#integração-aicss)
 
-  - [🤝 Contribuição](#-contribuição)
-
   - [📊 Visualização](#-visualização)
     - [Dashboards](#dashboards)
     - [Relatórios](#relatórios)
 
-  - [📄 Licença](#-licença)
-
   - [🔗 Links Úteis](#-links-úteis)
+
+  - [🤝 Contribuição](#-contribuição)
+
+  - [📄 Licença](#-licença)
 
 ## 👀 Visão Geral
 Lumion Analytics é um sistema de análise de consumo energético que integra dados da Agencia Nacional de Energia Elétrica - ANEEL com informações do sistema AICSS que é um sistema automatizado de controle de iluminação residencial que otimiza o consumo de energia através de sensores e automação inteligente. O sistema gerencia tanto a iluminação interna quanto externa, considerando fatores como luminosidade ambiente e presença de pessoas. Essa integração tem como objetivo fornecer insights sobre padrões de consumo e eficiência energética.
