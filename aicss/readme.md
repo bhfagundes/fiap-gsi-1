@@ -18,6 +18,8 @@
     - [📈 Métricas de Desempenho](#métricas-de-desempenho)
     - [ 🔍 Troubleshooting](#troubleshooting)
     - [ 📱 Próximos Passos](#próximos-passos)
+   
+    - [🚀 Execução](#-execução)
   
   - [🔄 Plano de Manutenção](#plano-de-manutenção)
 
@@ -312,6 +314,28 @@ void controleIluminacao() {
 - [ ] Ajuste os parâmetros de sensibilidade
 - [ ] Teste em diferentes condições de luz
 - [ ] Configure alertas (opcional)
+
+## 🚀 Execução
+
+1. Instalação do Hardware:
+```
+ git clone https://github.com/seu-usuario/lumion
+   cd lumion
+```
+
+2. Configuração do Ambiente:
+- Instale PlatformIO IDE
+- Configure as credenciais WiFi
+- Ajuste os parâmetros de sensibilidade
+
+3. Primeira Execução
+```
+pio run -t upload
+```
+4. Verificação
+- Monitore os logs iniciais
+- Verifique a conexão dos sensores
+- Teste o funcionamento básico
 
 ## 🔄 Plano de Manutenção
 ```mermaid
