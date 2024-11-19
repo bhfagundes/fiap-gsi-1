@@ -20,7 +20,14 @@
     - [ 📱 Próximos Passos](#próximos-passos)
   
   - [🔄 Plano de Manutenção](#plano-de-manutenção)
-            
+
+  - [📱 Interface e Controle](#interface-e-controle)
+
+  - [🔒 Segurança](#segurança)
+  
+  -[ 📈 Escalabilidade](#escalabilidade)
+
+           
   - [💰 Análise Econômica](#-análise-econômica)
     - [📊 Cenário Atual](#cenario-atual)
     - [📈 Projeção de Economia](#projeção-de-economia)
@@ -32,39 +39,15 @@
   - [⚖️ Tradeoffs](#️-tradeoffs)
     - [Vantagens](#vantagens)
     - [Desvantagens](#desvantagens)
-  - [📊 Diagrama de Conexões](#-diagrama-de-conexões)
-  - [📈 Métricas de Desempenho](#-métricas-de-desempenho)
-    - [Tempo de Resposta](#tempo-de-resposta)
-    - [Confiabilidade](#confiabilidade)
+
+  - [🌍 Impacto Ambiental](#-impacto-ambiental)
  
   - [📱 Integração Futura](#-integração-futura)
-  - [📊 Análise Detalhada de ROI](#-análise-detalhada-de-roi)
-    - [Cálculos Base](#cálculos-base)
-    - [Economia Projetada com Sistema Inteligente](#economia-projetada-com-sistema-inteligente)
-    - [Cálculo do ROI](#cálculo-do-roi)
-    - [Benefícios Indiretos Quantificados](#benefícios-indiretos-quantificados)
-  - [🌍 Impacto Ambiental](#-impacto-ambiental)
-    - [Sustentabilidade](#sustentabilidade)
-  - [🔬 Detalhes Técnicos](#-detalhes-técnicos)
-    - [Especificações do Sistema](#especificações-do-sistema)
-    - [Algoritmo de Controle](#algoritmo-de-controle)
-  - [📱 Interface e Controle](#-interface-e-controle)
-    - [App Mobile (Futuro)](#app-mobile-futuro)
-    - [Integração IoT](#integração-iot)
-  - [🔒 Segurança](#-segurança)
-    - [Medidas Implementadas](#medidas-implementadas)
-  - [📈 Escalabilidade](#-escalabilidade)
-    - [Expansão Futura](#expansão-futura)
   - [📋 Certificações e Normas](#-certificações-e-normas)
-    - [Conformidade](#conformidade)
-  - [🔗 Integração com Outras Disciplinas](#-integração-com-outras-disciplinas)
-    - [Python (CTWP)](#python-ctwp)
-    - [Banco de Dados (CDS)](#banco-de-dados-cds)
-    - [Análise em R (SCR)](#análise-em-r-scr)
-  - [📹 Demonstração](#-demonstração)
-    - [Vídeo de Funcionamento](#vídeo-de-funcionamento)
-    - [Resultados Obtidos](#resultados-obtidos)
-
+  - [🔗 Extras | Integração com Outras Disciplinas](#-integração-com-outras-disciplinas)
+ - [📹 Demonstração](#-demonstração)
+ 
+  
 ## 👀 Visão Geral
 O Lumion é uma solução inovadora de automação residencial focada no controle inteligente de iluminação. Desenvolvido com tecnologia IoT, o sistema utiliza sensores avançados e algoritmos adaptativos para otimizar o consumo energético, proporcionando economia de até 60% nos custos de iluminação.
 
@@ -375,6 +358,58 @@ gantt
 - Testar novas versões em ambiente controlado
 - Realizar rollback se necessário
 
+## 📱 Interface e Controle
+
+### App Mobile (Futuro)
+**Funcionalidades**
+   - Dashboard em tempo real
+   - Controle manual override
+   - Histórico de consumo
+   - Alertas e notificações
+
+**Tecnologias**
+   - Frontend: React Native
+   - Backend: Node.js
+   - Database: MongoDB
+   - API: REST/WebSocket
+
+### Integração IoT
+**Protocolos**
+   - MQTT para comunicação
+   - SSL/TLS para segurança
+   - JSON para payload
+
+**Cloud Services**
+   - AWS IoT Core
+   - Azure IoT Hub
+   - Google Cloud IoT
+
+## 🔒 Segurança
+
+### Medidas Implementadas
+1. **Física**
+   - Sensores redundantes
+   - Proteção contra surtos
+   - Backup de energia
+
+2. **Digital**
+   - Criptografia AES-256
+   - Autenticação dois fatores
+   - Logs de acesso
+
+## 📈 Escalabilidade
+
+### Expansão Futura
+1. **Hardware**
+   - Suporte até 32 sensores
+   - Múltiplos controladores
+   - Integração com outros sistemas
+
+2. **Software**
+   - APIs públicas
+   - Marketplace de plugins
+   - Machine Learning adaptativo
+
 ### 💰 Análise Econômica
 
 ### 📊 Cenário Atual (Sem Automação)
@@ -466,20 +501,124 @@ graph LR
     D[Desvantagens]
 ```
 
+### Análise Detalhada
 ### Vantagens
-1. Automação completa
-2. Economia significativa
-3. Aumento da vida útil das lâmpadas
-4. Segurança mantida
-5. Baixa manutenção
+1. Automação Completa
+- Benefício: Controle preciso e adaptativo da iluminação
+- Impacto: Alto (0.9)
+- Complexidade: Baixa
+- Observação: Fundamental para a eficiência do sistema
+2. Economia Significativa
+- Benefício: Redução substancial nos custos de energia
+- Impacto: Muito Alto (0.95)
+- Complexidade: Baixa-Média
+- Observação: Principal atrativo para adoção do sistema
+3. Aumento da Vida Útil das Lâmpadas
+- Benefício: Menor frequência de substituições
+- Impacto: Alto (0.7)
+- Complexidade: Média
+- Observação: Contribui para economia a longo prazo
+4. Segurança Mantida
+- Benefício: Iluminação adequada em momentos críticos
+- Impacto: Alto (0.8)
+- Complexidade: Média-Alta
+- Observação: Essencial para aceitação do usuário
+5. Baixa Manutenção
+- Benefício: Redução de intervenções técnicas
+- Impacto: Médio (0.6)
+- Complexidade: Média
+- Observação: Aumenta a satisfação do usuário a longo prazo
 
 ### Desvantagens
-1. Custo inicial
-2. Necessidade de calibração
-3. Dependência de energia elétrica
-4. Possíveis falsos positivos
+1. Custo Inicial
+- Desafio: Investimento inicial pode ser percebido como alto
+- Impacto: Médio (0.4)
+- Complexidade: Alta
+- Mitigação: verificar ROI e opções de financiamento
+2. Necessidade de Calibração
+- Desafio: Ajustes periódicos para performance
+- Impacto: Médio (0.5)
+- Complexidade: Alta
+- Mitigação: Desenvolvimento de algoritmos de auto-calibração
+3. Dependência de Energia Elétrica
+- Desafio: Sistema inoperante em caso de falha elétrica
+- Impacto: Baixo-Médio (0.3)
+- Complexidade: Muito Alta
+- Mitigação: Integração com sistemas de backup de energia
+4.Possíveis Falsos Positivos
+- Desafio: Ativações indesejadas do sistema
+- Impacto: Baixo (0.2)
+- Complexidade: Alta
+- Mitigação: Refinamento contínuo dos algoritmos de detecção
 
 
+## 🌍 Impacto Ambiental
+
+O sistema Lumion não apenas oferece benefícios econômicos e de conforto, mas também representa um passo significativo em direção a residências mais sustentáveis e ambientalmente responsáveis. Cada instalação contribui para um futuro mais verde e eficiente energeticamente.
+
+```mermaid
+graph TD
+    A[Lumion Sistema] --> B[Redução de Resíduos]
+    A --> C[Eficiência Energética]
+    A --> D[Pegada de Carbono]
+    B --> B1[Menos Trocas de Lâmpadas]
+    B --> B2[Menor Descarte]
+    B --> B3[Reciclagem Facilitada]
+    C --> C1[Redução Consumo Pico]
+    C --> C2[Otimização por Uso Real]
+    C --> C3[Adaptação Luminosidade Natural]
+    D --> D1[Redução Emissões CO2]
+    D --> D2[Economia de Recursos]
+    
+    style A fill:#f9f,stroke:#333,stroke-width:4px
+    style B fill:#bbf,stroke:#f66,stroke-width:2px
+    style C fill:#bfb,stroke:#f66,stroke-width:2px
+    style D fill:#fbf,stroke:#f66,stroke-width:2px
+```
+
+### Sustentabilidade
+1. **Redução de Resíduos**
+  - A. Menos Trocas de Lâmpadas
+    - Impacto: Redução de 60% na frequência de substituição
+    - Quantificação: Em média, 5 lâmpadas a menos descartadas por residência/ano
+    - Benefício Ambiental: Diminuição de resíduos eletrônicos e materiais tóxicos em aterros
+  - B. Menor Descarte de Componentes
+    - Durabilidade: Componentes do sistema projetados para 10+ anos de vida útil
+    - Manutenção: Design modular permite substituição de partes específicas, não do sistema inteiro
+    - Impacto: Redução estimada de 70% no descarte de componentes eletrônicos
+  - C. Reciclagem Facilitada
+    - Design: Uso de materiais recicláveis em 85% dos componentes
+    - Programa de Retorno: Parceria com centros de reciclagem para coleta e processamento adequado
+    - Educação: Guia de descarte responsável fornecido aos usuários
+
+2. **Eficiência Energética**
+  - A. Redução do Consumo em Horário de Pico
+    - Smart Grid Integration: Ajuste automático baseado em dados da rede elétrica
+    - Impacto: Redução de até 30% no consumo durante horários de pico
+    - Benefício: Alívio na demanda da rede elétrica, reduzindo a necessidade de usinas de reserva
+  - B. Otimização Baseada em Uso Real
+    - Machine Learning: Algoritmos que aprendem padrões de uso e otimizam automaticamente
+    - Dados: Redução média de 40% no tempo de iluminação desnecessária
+    - Personalização: Ajustes finos baseados em preferências e necessidades individuais
+  - C. Adaptação à Luminosidade Natural
+    - Sensores: LDR de alta precisão para detecção de luz ambiente
+    - Dimming Inteligente: Ajuste gradual da intensidade luminosa
+    - Economia: Até 25% de redução adicional no consumo em dias claros
+
+3. **Pegada de Carbono**
+  - A. Redução de Emissões de CO2
+    - Cálculo: Baseado na redução de consumo energético
+    - Estimativa: 120 kg de CO2 evitados por residência/ano
+    - Equivalência: Plantio de 2 árvores por ano para cada sistema instalado
+  - B. Economia de Recursos
+    - Produção: Menor demanda por novas lâmpadas e componentes
+    - Transporte: Redução na logística de substituição de produtos
+    - Matéria-Prima: Economia estimada de 2 kg de materiais por residência/ano
+
+**Certificações e Compromissos**
+- ISO 14001: Certificação de Gestão Ambiental
+- RoHS Compliant: Restrição de Substâncias Perigosas
+- Carbon Neutral: Compromisso de neutralidade de carbono na produção até 2025
 
 ## 📱 Integração Futura
 
@@ -494,74 +633,6 @@ graph LR
    - Dashboards personalizados
 
 
-
-## 🌍 Impacto Ambiental
-
-### Sustentabilidade
-1. **Redução de Resíduos**
-   - Menos trocas de lâmpadas
-   - Menor descarte de componentes
-   - Reciclagem facilitada
-
-2. **Eficiência Energética**
-   - Redução do consumo em horário de pico
-   - Otimização baseada em uso real
-   - Adaptação à luminosidade natural
-
-
-
-## 📱 Interface e Controle
-
-### App Mobile (Futuro)
-**Funcionalidades**
-   - Dashboard em tempo real
-   - Controle manual override
-   - Histórico de consumo
-   - Alertas e notificações
-
-**Tecnologias**
-   - Frontend: React Native
-   - Backend: Node.js
-   - Database: MongoDB
-   - API: REST/WebSocket
-
-### Integração IoT
-**Protocolos**
-   - MQTT para comunicação
-   - SSL/TLS para segurança
-   - JSON para payload
-
-**Cloud Services**
-   - AWS IoT Core
-   - Azure IoT Hub
-   - Google Cloud IoT
-
-## 🔒 Segurança
-
-### Medidas Implementadas
-1. **Física**
-   - Sensores redundantes
-   - Proteção contra surtos
-   - Backup de energia
-
-2. **Digital**
-   - Criptografia AES-256
-   - Autenticação dois fatores
-   - Logs de acesso
-
-## 📈 Escalabilidade
-
-### Expansão Futura
-1. **Hardware**
-   - Suporte até 32 sensores
-   - Múltiplos controladores
-   - Integração com outros sistemas
-
-2. **Software**
-   - APIs públicas
-   - Marketplace de plugins
-   - Machine Learning adaptativo
-
 ## 📋 Certificações e Normas
 
 ### Conformidade
@@ -575,7 +646,7 @@ graph LR
    - CE Mark
    - RoHS
 
-## 🔗 Integração com Outras Disciplinas
+## 🔗 Extra | Integração com Outras Disciplinas
 
 ### Python (CTWP)
 - API REST para receber dados do ESP32
@@ -601,4 +672,4 @@ graph LR
 
 
 
-Para mais informações sobre o ESP32, consulte a documentação oficial: [ESP32 Documentation](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/index.html)
+
