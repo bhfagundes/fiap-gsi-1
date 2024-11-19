@@ -45,8 +45,10 @@
   - [📱 Integração Futura](#-integração-futura)
   - [📋 Certificações e Normas](#-certificações-e-normas)
   - [🔗 Extras | Integração com Outras Disciplinas](#-integração-com-outras-disciplinas)
- - [📹 Demonstração](#-demonstração)
- 
+  - [📹 Demonstração](#-demonstração)
+  - [🤝 Contribuição](#-contribuição)
+  - [ 📄 Licença](#-licença)
+
   
 ## 👀 Visão Geral
 O Lumion é uma solução inovadora de automação residencial focada no controle inteligente de iluminação. Desenvolvido com tecnologia IoT, o sistema utiliza sensores avançados e algoritmos adaptativos para otimizar o consumo energético, proporcionando economia de até 60% nos custos de iluminação.
@@ -670,6 +672,14 @@ graph TD
 - Demonstração completa do sistema funcionando no Wokwi
 - Explicação dos componentes e funcionalidades
 
+## 🤝 Contribuição
+1. Fork o projeto
+2. Crie sua branch (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
 
+## 📄 Licença
+Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
 
 
