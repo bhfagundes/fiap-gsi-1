@@ -1,21 +1,34 @@
-# Sistema Inteligente de Iluminação Residencial
+# 🔋 Lumion - Sistema Inteligente de Iluminação Residencial (AICSS)
 
 ## 📝 Sumário
-- [Sistema Inteligente de Iluminação Residencial](#sistema-inteligente-de-iluminação-residencial)
-  - [📝 Sumário](#-sumário)
-  - [🎯 Visão Geral](#-visão-geral)
-  - [🔧 Componentes](#-componentes)
-    - [Hardware Principal](#hardware-principal)
+
+  - [👀 Visão Geral](#-visão-geral)
+     
+  - [🔧 Componentes do sistema](#-componentes-do-sistema)
+    
   - [⚙️ Funcionamento](#️-funcionamento)
-    - [Iluminação Externa (LED Amarelo)](#iluminação-externa-led-amarelo)
-    - [Iluminação Interna (LED Branco)](#iluminação-interna-led-branco)
+    
+  - [🛠️ Guia de Instalação](#️-guia-de-instalação)
+    - [📡 Conexões de Hardware](#conexões-de-hardware)
+    - [📊 Diagrama de Conexões](#diagrama-de-conexões)
+    - [💻 Configuração do Ambiente](#configurações-do-ambiente)
+    - [🔧 Montagem Física](#montagem-física)
+    - [⚡ Primeira Execução](#primeira-execução)
+    - [🔬 Detalhes Técnicos](#detalhes-tecnicos)
+    - [📈 Métricas de Desempenho](#métricas-de-desempenho)
+    - [ 🔍 Troubleshooting](#troubleshooting)
+    - [ 📱 Próximos Passos](#próximos-passos)
+  
+  - [🔄 Plano de Manutenção](#plano-de-manutenção)
+            
   - [💰 Análise Econômica](#-análise-econômica)
-    - [Consumo Atual (Sem Sistema)](#consumo-atual-sem-sistema)
-    - [Economia Projetada](#economia-projetada)
-    - [ROI (Return on Investment)](#roi-return-on-investment)
-  - [🛠️ Instalação](#️-instalação)
-    - [Conexões Físicas](#conexões-físicas)
-    - [Software Necessário](#software-necessário)
+    - [📊 Cenário Atual](#cenario-atual)
+    - [📈 Projeção de Economia](#projeção-de-economia)
+    - [💎 Análise de Investimento](#análise-de-investimento)
+    - [🌱 Benefícios Financeiros Indiretos](#abenefícios-financeiros-indiretos)
+    - [📊 Projeção 5 Anos](#projeção-5-anos)
+   
+ 
   - [⚖️ Tradeoffs](#️-tradeoffs)
     - [Vantagens](#vantagens)
     - [Desvantagens](#desvantagens)
@@ -23,9 +36,7 @@
   - [📈 Métricas de Desempenho](#-métricas-de-desempenho)
     - [Tempo de Resposta](#tempo-de-resposta)
     - [Confiabilidade](#confiabilidade)
-  - [🔄 Manutenção](#-manutenção)
-    - [Periódica](#periódica)
-    - [Preventiva](#preventiva)
+ 
   - [📱 Integração Futura](#-integração-futura)
   - [📊 Análise Detalhada de ROI](#-análise-detalhada-de-roi)
     - [Cálculos Base](#cálculos-base)
@@ -54,35 +65,45 @@
     - [Vídeo de Funcionamento](#vídeo-de-funcionamento)
     - [Resultados Obtidos](#resultados-obtidos)
 
-## 🎯 Visão Geral
-Sistema automatizado de controle de iluminação residencial que otimiza o consumo de energia através de sensores e automação inteligente. O sistema gerencia tanto a iluminação interna quanto externa, considerando fatores como luminosidade ambiente e presença de pessoas.
+## 👀 Visão Geral
+O Lumion é uma solução inovadora de automação residencial focada no controle inteligente de iluminação. Desenvolvido com tecnologia IoT, o sistema utiliza sensores avançados e algoritmos adaptativos para otimizar o consumo energético, proporcionando economia de até 60% nos custos de iluminação.
 
-## 🔧 Componentes
+### Principais benefícios
+- 🔋 Redução significativa no consumo de energia
+- 🏠 Automação completa da iluminação residencial
+- 💡 Aumento da vida útil das lâmpadas
+- 🌱 Contribuição para sustentabilidade
+- 💰 Retorno do investimento em menos de 2 meses
+
+## 🔧 Componentes do sistema
 
 ### Hardware Principal
-1. **ESP32 DevKit V1**
+**ESP32 DevKit V1**
    - Microcontrolador com WiFi e Bluetooth
    - Processamento central do sistema
    - Custo: R$ 50,00
 
-2. **Sensor LDR (Light Dependent Resistor)**
+### Sensores Inteligentes
+**LDR (Light Dependent Resistor)**
    - Detecta níveis de luminosidade ambiente
    - Range: 0-4095 (ADC)
    - Custo: R$ 3,00
 
-3. **Sensor Ultrassônico HC-SR04**
+**Ultrassônico HC-SR04**
    - Detecta presença/movimento
    - Alcance: 2cm - 400cm
    - Custo: R$ 15,00
 
-4. **LEDs de Iluminação**
+### Sistema de Iluminação
+**LEDs de Iluminação**
    - LED Branco (interno): R$ 5,00
    - LED Amarelo (externo): R$ 5,00
    - Resistores 220Ω: R$ 0,50 cada
 
-**Custo Total: R$ 78,00**
+**Investimento Total: R$ 78,00**
 
 ## ⚙️ Funcionamento
+O Lumion opera através de um sistema de controle adaptativo que ajusta automaticamente a iluminação baseado em três fatores principais:
 
 ### Iluminação Externa (LED Amarelo)
 ```cpp
@@ -110,233 +131,133 @@ if (distancia < 100 && valorLuz < 2000) {
 - Considera luminosidade ambiente
 - Desliga automaticamente quando não há movimento
 
-## 💰 Análise Econômica
+## 🛠️ Guia de Instalação
 
-### Consumo Atual (Sem Sistema)
-- Iluminação externa: 100W x 12h = 1.2kWh/dia
-- Iluminação interna: 60W x 5h = 0.3kWh/dia
-- Custo mensal: R$ 33,75 (tarifa R$ 0,75/kWh)
+### 📡 Conexões de Hardware
 
-### Economia Projetada
-1. **Iluminação Externa**
-   - Redução: 60%
-   - Economia mensal: R$ 16,20
+### Pinagem ESP32
+|Componente    |Pino ESP32|Tipo  | Descrição                    |
+| :---         |  :---:   |:---: |    :---:                     |    
+|LDR           |GPIO34    |Input |Sensor de luminosidade        | 
+|HC-SR04 (TRIG)|GPIO26    |Output|Trigger do sensor ultrassônico| 
+|HC-SR04 (ECHO)|GPIO27    |Input |Echo do sensor ultrassônico   |
+| LED Interno  |GPIO2     |Output|Iluminação ambiente interno   |
+|LED Externo   |GPIO4     |Output|Iluminação ambiente externo   |
 
-2. **Iluminação Interna**
-   - Redução: 40%
-   - Economia mensal: R$ 2,70
+### 📊 Diagrama de Conexões
+```mermaid
+graph TD
+    ESP32[ESP32 DevKit]
+    LDR[LDR Sensor]
+    TRIG[HC-SR04 TRIG]
+    ECHO[HC-SR04 ECHO]
+    LEDW[LED Branco]
+    LEDY[LED Amarelo]
 
-### ROI (Return on Investment)
-- Investimento: R$ 78,00
-- Economia mensal: R$ 18,90
-- Payback: 4,1 meses
+    LDR -->|GPIO34| ESP32
+    TRIG -->|GPIO26| ESP32
+    ECHO -->|GPIO27| ESP32
+    ESP32 -->|GPIO2| LEDW
+    ESP32 -->|GPIO4| LEDY
 
-## 🛠️ Instalação
+    style ESP32 fill:#f9f,stroke:#333,stroke-width:4px
+    style LDR fill:#bbf,stroke:#f66,stroke-width:2px
+    style TRIG fill:#bfb,stroke:#f66,stroke-width:2px
+    style ECHO fill:#bfb,stroke:#f66,stroke-width:2px
+    style LEDW fill:#fbb,stroke:#f66,stroke-width:2px
+    style LEDY fill:#ffb,stroke:#f66,stroke-width:2px
+```
+### 💻 Configuração do Ambiente
 
-### Conexões Físicas
-ESP32 Pin Layout:
-- GPIO34 -> LDR (Sensor luz)
-- GPIO26 -> HC-SR04 TRIG
-- GPIO27 -> HC-SR04 ECHO
-- GPIO2  -> LED Interno (branco)
-- GPIO4  -> LED Externo (amarelo)
+### Pré-requisitos
 
-### Software Necessário
-- PlatformIO IDE
-- Visual Studio Code
-- ESP32 Arduino Framework
+```cpp
+# 1. Instale o Visual Studio Code
+https://code.visualstudio.com/download
 
-## ⚖️ Tradeoffs
+# 2. Instale o PlatformIO IDE
+Code → Extensions → PlatformIO IDE
 
-### Vantagens
-1. Automação completa
-2. Economia significativa
-3. Aumento da vida útil das lâmpadas
-4. Segurança mantida
-5. Baixa manutenção
+# 3. Instale o ESP32 Arduino Framework
+PlatformIO → Platforms → Espressif32
+```
+### Preparação do Projeto
+```cpp
+# Clone o repositório
+git clone https://github.com/seu-usuario/lumion.git
 
-### Desvantagens
-1. Custo inicial
-2. Necessidade de calibração
-3. Dependência de energia elétrica
-4. Possíveis falsos positivos
+# Entre no diretório
+cd lumion
 
-## 📊 Diagrama de Conexões
-
-```txt
-                           +-------------+
-                           |   ESP32     |
-                           |             |
-LDR -------------------- 34|             |
-                           |             |
-HC-SR04 (TRIG) --------- 26|             |
-HC-SR04 (ECHO) --------- 27|             |
-                           |             |
-LED Interno ------------- 2|             |
-LED Externo ------------- 4|             |
-                           |             |
-                           +-------------+
+# Instale as dependências
+pio pkg install
+```
+### Configuração do Hardware
+```cpp
+// Defina as configurações no config.h
+#define LDR_PIN         34
+#define ULTRASONIC_TRIG 26
+#define ULTRASONIC_ECHO 27
+#define LED_INTERNO     2
+#define LED_EXTERNO     4
 ```
 
-## 📈 Métricas de Desempenho
+### 🔧 Montagem Física
 
-### Tempo de Resposta
-- Detecção de movimento: < 100ms
-- Ajuste de luminosidade: < 50ms
-- Boot do sistema: < 2s
+### Lista de Materiais
+- [ ] ESP32 DevKit V1
+- [ ] Sensor LDR
+- [ ] Sensor HC-SR04
+- [ ] 2× LEDs (branco e amarelo)
+- [ ] 2× Resistores 220Ω
+- [ ] Jumpers
+- [ ] Case protetor (opcional)
 
-### Confiabilidade
-- MTBF estimado: > 50.000 horas
-- Taxa de falsos positivos: < 2%
-- Precisão do sensor de luz: ±5%
+### Passos de Montagem
 
-## 🔄 Manutenção
+### Preparação
+- Verifique todos os componentes
+- Organize a área de trabalho
+- Prepare as ferramentas necessárias
 
-### Periódica
-1. Limpeza dos sensores (mensal)
-2. Verificação das conexões (trimestral)
-3. Calibração dos sensores (semestral)
+### Conexões
+```cpp
+# Sequência recomendada
+   1. Conecte o LDR ao GPIO34
+   2. Conecte o HC-SR04 (TRIG → GPIO26, ECHO → GPIO27)
+   3. Instale os LEDs com seus resistores
+   4. Verifique todas as conexões
+```
+### Verificação
+- [ ] Teste de continuidade
+- [ ] Verificação visual
+- [ ] Teste de polaridade dos LEDs
 
-### Preventiva
-- Backup das configurações
-- Monitoramento do consumo
-- Verificação do firmware
+### ⚡ Primeira Execução
 
-## 📱 Integração Futura
+### Upload do Código
+```cpp
+# Compile e faça upload
+pio run -t upload
 
-1. **App Mobile**
-   - Controle remoto
-   - Monitoramento em tempo real
-   - Configurações personalizadas
+# Monitor serial para debug
+pio device monitor
+```
 
-2. **Smart Home**
-   - Integração com Alexa/Google Home
-   - MQTT para IoT
-   - Dashboards personalizados
+### Verificação do Sistema
+```cpp
+# Sequência de teste
+1. LED Externo → Deve piscar na inicialização
+2. LED Interno → Deve responder a movimento
+3. Serial Monitor → Deve mostrar leituras dos sensores
+```
 
-## 📊 Análise Detalhada de ROI
-
-### Cálculos Base
-1. **Consumo Atual (Sem Sistema)**
-   ```
-   Iluminação Externa:
-   - Potência: 100W
-   - Uso diário: 12 horas
-   - Consumo diário: 100W × 12h = 1.2kWh/dia
-   - Consumo mensal: 1.2kWh × 30 dias = 36kWh/mês
-   - Custo mensal: 36kWh × R$0,75 = R$27,00/mês
-   - Custo anual: R$27,00 × 12 = R$324,00/ano
-
-   Iluminação Interna:
-   - Potência: 60W
-   - Uso diário: 5 horas
-   - Consumo diário: 60W × 5h = 0.3kWh/dia
-   - Consumo mensal: 0.3kWh × 30 dias = 9kWh/mês
-   - Custo mensal: 9kWh × R$0,75 = R$13,50/mês
-   - Custo anual: R$13,50 × 12 = R$162,00/ano
-   ```
-
-2. **Custos de Manutenção Tradicional**
-   ```
-   Troca de Lâmpadas:
-   - Custo médio lâmpada: R$20,00
-   - Trocas por ano: 6 lâmpadas
-   - Custo anual: R$20,00 × 6 = R$120,00/ano
-
-   Mão de Obra:
-   - Custo por visita: R$50,00
-   - Visitas por ano: 4 visitas
-   - Custo anual: R$50,00 × 4 = R$200,00/ano
-   ```
-
-### Economia Projetada com Sistema Inteligente
-
-1. **Redução no Consumo de Energia**
-   ```
-   Iluminação Externa (60% redução):
-   - Economia anual: R$324,00 × 0,60 = R$194,40
-
-   Iluminação Interna (40% redução):
-   - Economia anual: R$162,00 × 0,40 = R$32,40
-
-   Total economia energia: R$194,40 + R$32,40 = R$226,80/ano
-   ```
-
-2. **Redução em Manutenção**
-   ```
-   Troca de Lâmpadas (80% redução):
-   - Economia anual: R$120,00 × 0,80 = R$96,00
-
-   Mão de Obra (80% redução):
-   - Economia anual: R$200,00 × 0,80 = R$160,00
-
-   Total economia manutenção: R$96,00 + R$160,00 = R$256,00/ano
-   ```
-
-### Cálculo do ROI
-
-1. **Investimento Inicial**
-   ```
-   Hardware:
-   - ESP32 DevKit V1: R$50,00
-   - Sensor LDR: R$3,00
-   - Sensor HC-SR04: R$15,00
-   - LEDs e Resistores: R$10,00
-
-   Total investimento: R$78,00
-   ```
-
-2. **Retorno Anual**
-   ```
-   Economia Total:
-   - Energia: R$226,80/ano
-   - Manutenção: R$256,00/ano
-   Total: R$482,80/ano
-
-   ROI Percentual:
-   (Retorno - Investimento) / Investimento × 100
-   (R$482,80 - R$78,00) / R$78,00 × 100 = 519%
-
-   Tempo de Payback:
-   R$78,00 / (R$482,80 / 12) = 1,94 meses
-   ```
-
-### Benefícios Indiretos Quantificados
-
-1. **Redução de CO2**
-   ```
-   Economia de energia: 259,2kWh/ano
-   Fator de emissão: 0,463kg CO2/kWh
-   Redução CO2: 259,2 × 0,463 = 120kg CO2/ano
-   ```
-
-2. **Vida Útil dos Equipamentos**
-   ```
-   Aumento médio: 40%
-   - LED tradicional: 15.000 horas
-   - Com sistema: 21.000 horas
-   ```
-
-3. **Manutenção Não Programada**
-   ```
-   Redução de chamados emergenciais:
-   - Antes: ~12 chamados/ano
-   - Depois: ~4 chamados/ano
-   Redução: 65%
-   ```
-
-## 🌍 Impacto Ambiental
-
-### Sustentabilidade
-1. **Redução de Resíduos**
-   - Menos trocas de lâmpadas
-   - Menor descarte de componentes
-   - Reciclagem facilitada
-
-2. **Eficiência Energética**
-   - Redução do consumo em horário de pico
-   - Otimização baseada em uso real
-   - Adaptação à luminosidade natural
+### Calibração
+```cpp
+// Ajuste os valores no código conforme necessário
+#define LUZ_THRESHOLD    2000  // Ajuste sensibilidade do LDR
+#define DIST_THRESHOLD   100   // Ajuste distância de detecção
+```
 
 ## 🔬 Detalhes Técnicos
 
@@ -376,29 +297,241 @@ void controleIluminacao() {
     }
 }
 ```
+## 📈 Métricas de Desempenho
+
+### Tempo de Resposta
+- Detecção de movimento: < 100ms
+- Ajuste de luminosidade: < 50ms
+- Boot do sistema: < 2s
+
+### Confiabilidade
+- MTBF estimado: > 50.000 horas
+- Taxa de falsos positivos: < 2%
+- Precisão do sensor de luz: ±5%
+
+
+### 🔍 Troubleshooting
+
+### Problemas Comuns
+- LED não acende
+- Verificar polaridade
+- Testar resistor
+- Confirmar pinagem
+- Sensor não responde
+- Verificar conexões
+- Testar alimentação
+- Atualizar drivers
+
+### 📱 Próximos Passos
+- [ ] Configure a rede WiFi
+- [ ] Ajuste os parâmetros de sensibilidade
+- [ ] Teste em diferentes condições de luz
+- [ ] Configure alertas (opcional)
+
+## 🔄 Plano de Manutenção
+```mermaid
+gantt
+    title Cronograma de Manutenção Lumion
+    dateFormat  YYYY-MM-DD
+    section Limpeza
+    Limpeza dos Sensores       :crit, active, l1, 2024-12-01, 30d
+    section Verificação
+    Verificação das Conexões   :active, v1, 2024-12-01, 90d
+    section Calibração
+    Calibração dos Sensores    :active, c1, 2024-12-01, 180d
+    section Preventiva
+    Backup de Configurações    :2024-12-01, 30d
+    Monitoramento de Consumo   :2024-12-01, 180d
+    Verificação de Firmware    :2024-12-01, 90d
+```
+
+### Detalhamneto de Manutenção
+
+### Manutenção Periódica
+- Limpeza dos Sensores (Mensal)
+  - Remover poeira e resíduos
+  - Verificar integridade física
+  - Aplicar produto anti-estático
+- Verificação das Conexões (Trimestral)
+  - Inspecionar soldas e conectores
+  - Testar continuidade elétrica
+  - Reapertar parafusos e terminais
+- Calibração dos Sensores (Semestral)
+  - Ajustar sensibilidade do LDR
+  - Verificar precisão do HC-SR04
+  - Atualizar parâmetros no firmware
+
+### Manutenção Preventiva
+- Backup das Configurações
+- Exportar configurações atuais
+- Armazenar em nuvem segura
+- Documentar alterações
+- Monitoramento do Consumo
+- Analisar logs de energia
+- Identificar padrões anômalos
+- Otimizar algoritmos de economia
+- Verificação do Firmware
+- Checar por atualizações disponíveis
+- Testar novas versões em ambiente controlado
+- Realizar rollback se necessário
+
+### 💰 Análise Econômica
+
+### 📊 Cenário Atual (Sem Automação)
+### Consumo Energético Base
+
+|Ambiente| Potencia | Uso diário | Consumo mensal | Custo R$ |
+| :---   |  :---:   |    :---:   |    :---:       |    :---: |
+|Externo | 100W     |    12h     |     36 kWh     | R$ 27,00 |
+|Interno | 60W      |     5h     |      9 kWh     | R$  6,75 |
+| Total  |  *       |     *      |     45 kWh     | R$ 33,75 |
+
+                               Tarifa considerada: R$ 0,75/kWh
+
+### 📈 Projeção de Economia
+
+### Otimização da Iluminação Externa
+- Redução no Tempo de Uso: 12h → 7.2h
+- Economia Energética: 60%
+
+```cpp
+Economia Mensal = (36 kWh × 0.60) × R$ 0,75
+Economia Mensal = R$ 16,20
+```
+
+### Otimização da Iluminação Interna
+- Redução no Tempo de Uso: 5h → 3h
+- Economia Energética: 40%
+
+```cpp
+Economia Mensal = (9 kWh × 0.40) × R$ 0,75
+Economia Mensal = R$ 2,70
+```
+
+### 💎 Análise de Investimento
+### ROI (Return on Investment)
+```cpp
+Investimento Inicial = R$ 78,00
+Economia Mensal = R$ 18,90
+Payback = 78,00 ÷ 18,90 = 4,1 meses
+ROI Anual = (18,90 × 12 - 78,00) ÷ 78,00 × 100 = 190%
+```
+### Projeção Financeira em 12 Meses
+
+|Mês | Economia Acumulada |      Status  | 
+|:---|       :---:        |      :---:   |   
+| 1  |      R$ 18,90      |   Em payback |     
+| 2  |      R$ 37,80      |   Em payback |     
+| 4  |      R$ 75,60      |   Breakeven  |    
+| 12 |      R$ 226,80     | Lucro líquido|  
+                               
+### 🌱 Benefícios Financeiros Indiretos
+- Redução de Manutenção
+- Menor frequência de trocas: -60%
+- Economia anual: R$ 120,00
+- Aumento da Vida Útil
+- Lâmpadas convencionais: 15.000h
+- Com sistema Lumion: 25.000h
+- Economia em reposição: R$ 80,00/ano
+- Valorização Imobiliária
+- Incremento estimado: 0,5%
+- Em imóvel de R$ 300.000: R$ 1.500,00
+
+### 📊 Projeção 5 Anos
+
+```cpp
+Economia Total = Energia + Manutenção + Vida Útil
+Economia Anual = R$ 226,80 + R$ 120,00 + R$ 80,00
+Economia em 5 Anos = R$ 2.134,00
+ROI 5 Anos = 2.637%
+```
+
+## ⚖️ Tradeoffs
+```mermaid
+graph LR
+    subgraph Vantagens
+        A[Automação] -->|Impacto: 0.9| V
+        E[Economia] -->|Impacto: 0.95| V
+        VU[Vida Útil] -->|Impacto: 0.7| V
+        S[Segurança] -->|Impacto: 0.8| V
+        BM[Baixa Manutenção] -->|Impacto: 0.6| V
+    end
+    subgraph Desvantagens
+        CI[Custo Inicial] -->|Impacto: 0.4| D
+        C[Calibração] -->|Impacto: 0.5| D
+        DE[Dependência Elétrica] -->|Impacto: 0.3| D
+        FP[Falsos Positivos] -->|Impacto: 0.2| D
+    end
+    V[Vantagens]
+    D[Desvantagens]
+```
+
+### Vantagens
+1. Automação completa
+2. Economia significativa
+3. Aumento da vida útil das lâmpadas
+4. Segurança mantida
+5. Baixa manutenção
+
+### Desvantagens
+1. Custo inicial
+2. Necessidade de calibração
+3. Dependência de energia elétrica
+4. Possíveis falsos positivos
+
+
+
+## 📱 Integração Futura
+
+1. **App Mobile**
+   - Controle remoto
+   - Monitoramento em tempo real
+   - Configurações personalizadas
+
+2. **Smart Home**
+   - Integração com Alexa/Google Home
+   - MQTT para IoT
+   - Dashboards personalizados
+
+
+
+## 🌍 Impacto Ambiental
+
+### Sustentabilidade
+1. **Redução de Resíduos**
+   - Menos trocas de lâmpadas
+   - Menor descarte de componentes
+   - Reciclagem facilitada
+
+2. **Eficiência Energética**
+   - Redução do consumo em horário de pico
+   - Otimização baseada em uso real
+   - Adaptação à luminosidade natural
+
+
 
 ## 📱 Interface e Controle
 
 ### App Mobile (Futuro)
-1. **Funcionalidades**
+**Funcionalidades**
    - Dashboard em tempo real
    - Controle manual override
    - Histórico de consumo
    - Alertas e notificações
 
-2. **Tecnologias**
+**Tecnologias**
    - Frontend: React Native
    - Backend: Node.js
    - Database: MongoDB
    - API: REST/WebSocket
 
 ### Integração IoT
-1. **Protocolos**
+**Protocolos**
    - MQTT para comunicação
    - SSL/TLS para segurança
    - JSON para payload
 
-2. **Cloud Services**
+**Cloud Services**
    - AWS IoT Core
    - Azure IoT Hub
    - Google Cloud IoT
@@ -432,12 +565,12 @@ void controleIluminacao() {
 ## 📋 Certificações e Normas
 
 ### Conformidade
-1. **Normas Técnicas**
+**Normas Técnicas**
    - ABNT NBR 5410
    - IEC 60364
    - ISO/IEC 27001
 
-2. **Certificações**
+**Certificações**
    - INMETRO
    - CE Mark
    - RoHS
@@ -466,18 +599,6 @@ void controleIluminacao() {
 - Demonstração completa do sistema funcionando no Wokwi
 - Explicação dos componentes e funcionalidades
 
-### Resultados Obtidos
-1. **Funcionamento**
-   - Controle automático de iluminação
-   - Resposta a mudanças de luminosidade
-   - Detecção de presença
 
-2. **Impactos Positivos**
-   - Economia de energia comprovada
-   - Conforto para usuários
-   - Segurança mantida
 
-3. **Impactos Negativos**
-   - Custo inicial de implementação
-   - Necessidade de manutenção periódica
-   - Dependência de energia elétrica
+Para mais informações sobre o ESP32, consulte a documentação oficial: [ESP32 Documentation](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/index.html)
