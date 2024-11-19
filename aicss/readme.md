@@ -6,7 +6,7 @@
      
   - [🔧 Componentes do sistema](#-componentes-do-sistema)
     
-  - [⚙️ Funcionamento](#️-funcionamento)
+  - [🚀 Funcionalidades](#️-funcionalidades)
     
   - [🛠️ Guia de Instalação](#️-guia-de-instalação)
     - [📡 Conexões de Hardware](#conexões-de-hardware)
@@ -89,7 +89,7 @@ O Lumion é uma solução inovadora de automação residencial focada no control
 
 **Investimento Total: R$ 78,00**
 
-## ⚙️ Funcionamento
+## 🚀 Funcionalidades
 O Lumion opera através de um sistema de controle adaptativo que ajusta automaticamente a iluminação baseado em três fatores principais:
 
 ### Iluminação Externa (LED Amarelo)
