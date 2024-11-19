@@ -40,7 +40,7 @@ A iniciativa visa otimizar o consumo de energia em diversos ambientes, integrand
 - Bryan | [INSERIR GIT]
 - DiogoBotton | https://github.com/DiogoBotton
 - Hyanka Coelho | https://github.com/hyanka-coelho
-- Juliana Hungaro |A https://github.com/juhungaro
+- Juliana Hungaro | https://github.com/juhungaro
                                                                                          
 ## 🤝 Contribuição
 1. Fork o projeto
