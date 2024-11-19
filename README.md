@@ -19,10 +19,10 @@ A iniciativa visa otimizar o consumo de energia em diversos ambientes, integrand
 ## 🚀 Desafios
 
 •	Artificial Intelligence Challenges (AIC) 
-  https://docs.google.com/document/d/1AyIYB3Jy7GzzfcHwefprez543dQv8PJEXCEba8fSNHo/edit?tab=t.0
+  - https://docs.google.com/document/d/1AyIYB3Jy7GzzfcHwefprez543dQv8PJEXCEba8fSNHo/edit?tab=t.0
 
 •	Artificial Intelligence with Computer Systems and Sensors (AICSS)
-  https://github.com/bhfagundes/fiap-gsi-1/blob/main/aicss/readme.md
+  - https://github.com/bhfagundes/fiap-gsi-1/blob/main/aicss/readme.md
 
 •	Statistical Computing with R (SCR) 
 
