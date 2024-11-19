@@ -38,9 +38,9 @@ A iniciativa visa otimizar o consumo de energia em diversos ambientes, integrand
 - Grave um vídeo no YouTube de até 6 minutos explicando todo o conjunto de soluções, como elas se relacionam tecnicamente, deixe-o como “não listado” para não dar spoiler do seu trabalho, e mande o link juntamente com o entregável final em PDF.
 
 ## ✒️ Autores
-- Brenner Henrique Fagundes Araújo | https://github.com/bhfagundes
-- Bryan | [INSERIR GIT]
-- DiogoBotton | https://github.com/DiogoBotton
+- Brenner H F Araújo | https://github.com/bhfagundes
+- Bryan Fagundes | https://github.com/bryanfagundes91
+- Diogo Botton | https://github.com/DiogoBotton
 - Hyanka Coelho | https://github.com/hyanka-coelho
 - Juliana Hungaro | https://github.com/juhungaro
                                                                                          
